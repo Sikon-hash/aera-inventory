@@ -50,7 +50,16 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('stock-opname', StockOpnameController::class)->middleware('role:Admin');
 
     // Laporan (Owner & Admin)
-    Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+    // Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+    Route::get('/laporan', function () {
+    return view('laporan.index', [
+        'bulan'      => date('m'),
+        'tahun'      => date('Y'),
+        'masuk'      => collect([]),
+        'keluar'     => collect([]),
+        'stokBarang' => collect([]),
+    ]);
+})->name('laporan.index');
 
     // User Management (Owner only)
     Route::resource('users', UserController::class)->middleware('role:Owner');

@@ -4,7 +4,7 @@
 
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
-        <span>📤 Data Barang Keluar</span>
+        <span>Data Barang Keluar</span>
         <a href="{{ route('barang-keluar.create') }}" class="btn btn-primary btn-sm">
             <i class="fas fa-plus me-1"></i>Tambah Barang Keluar
         </a>

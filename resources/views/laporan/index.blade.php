@@ -31,11 +31,11 @@
                     <i class="fas fa-filter me-1"></i>Tampilkan
                 </button>
             </div>
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <button type="button" class="btn btn-outline-secondary w-100" onclick="window.print()">
                     <i class="fas fa-print me-1"></i>Cetak Laporan
                 </button>
-            </div>
+            </div> -->
         </form>
     </div>
 </div>

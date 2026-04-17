@@ -4,10 +4,10 @@
 
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
-        <span>🚚 Data Supplier</span>
-        <a href="{{ route('supplier.create') }}" class="btn btn-primary btn-sm">
+        <span>Data Supplier</span>
+        <!-- <a href="{{ route('supplier.create') }}" class="btn btn-primary btn-sm">
             <i class="fas fa-plus me-1"></i>Tambah Supplier
-        </a>
+        </a> -->
     </div>
     <div class="card-body p-0">
         <table class="table table-hover mb-0">
@@ -56,16 +56,14 @@
                     </td>
                     <td>
                         <div class="d-flex gap-1">
-                            <a href="{{ route('supplier.edit', $s) }}"
-                               class="btn btn-sm btn-warning" title="Edit">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <form method="POST" action="{{ route('supplier.destroy', $s) }}"
-                                  class="d-inline"
-                                  onsubmit="return confirm('Hapus supplier {{ $s->nama_supplier }}?')">
-                                @csrf @method('DELETE')
-                                <button class="btn btn-sm btn-danger" title="Hapus">
-                                    <i class="fas fa-trash"></i>
+                            <a href="{{ route('supplier.edit', $supplier) }}">Edit</a>
+                            <form action="{{ route('supplier.destroy', $supplier) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                 <button 
+                                    <!-- type="submit" class="btn btn-danger btn-sm" --> -->
+                                        <!-- onclick="return confirm('Apakah Anda yakin ingin menghapus supplier ini?')"> -->
+                                    Hapus
                                 </button>
                             </form>
                         </div>

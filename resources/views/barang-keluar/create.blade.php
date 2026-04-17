@@ -8,7 +8,7 @@
             <a href="{{ route('barang-keluar.index') }}" class="btn btn-sm btn-outline-secondary">
                 <i class="fas fa-arrow-left"></i>
             </a>
-            <span>📤 Catat Barang Keluar</span>
+            <span>Catat Barang Keluar</span>
         </div>
         <div class="card-body">
             <form method="POST" action="{{ route('barang-keluar.store') }}">

@@ -52,22 +52,21 @@
                     <td>{{ $item->user->name ?? '-' }}</td>
                     <td><small class="text-muted">{{ $item->keterangan ?? '-' }}</small></td>
                     <td>
-                        <form method="POST" action="{{ route('stock-opname.destroy', $item) }}"
-                              class="d-inline"
-                              onsubmit="return confirm('Hapus data stock opname ini?')">
-                            @csrf @method('DELETE')
-                            <button class="btn btn-sm btn-danger" title="Hapus">
-                                <i class="fas fa-trash"></i>
+                        <form action="{{ route('stock-opname.destroy', $item->id) }}" method="POST" 
+                            style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" 
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Yakin ingin menghapus data opname ini?')">
+                                <i class="fas fa-trash"></i> Hapus
                             </button>
                         </form>
                     </td>
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="9" class="text-center py-4 text-muted">
-                        <i class="fas fa-clipboard fa-2x mb-2 d-block opacity-25"></i>
-                        Belum ada data stock opname.
-                    </td>
+                    <td colspan="9" class="text-center py-4">Tidak ada data stock opname.</td>
                 </tr>
                 @endforelse
             </tbody>
